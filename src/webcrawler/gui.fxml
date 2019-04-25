@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="657.0" prefWidth="601.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="webcrawler.GuiController">
+    <stylesheets>
+        <URL value="@gui.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutY="97.0" prefHeight="112.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox layoutY="27.0" prefHeight="39.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Max Depth">
+                     <HBox.margin>
+                        <Insets left="30.0" right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_max_depth" alignment="CENTER" prefHeight="25.0" prefWidth="59.0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label contentDisplay="CENTER" text="Max Pages to Fetch">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_max_pages" alignment="CENTER" prefHeight="25.0" prefWidth="59.0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label contentDisplay="CENTER" text="Politeness Delay">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_max_delay" alignment="CENTER" prefHeight="25.0" prefWidth="59.0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Label layoutX="35.0" layoutY="76.0" prefWidth="104.0" text="Ignore Extensions" />
+            <Label contentDisplay="CENTER" layoutX="268.0" layoutY="1.0" prefHeight="27.0" prefWidth="73.0" text="Settings" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_extensions" layoutX="137.0" layoutY="72.0" prefHeight="25.0" prefWidth="420.0" AnchorPane.leftAnchor="137.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btn_start_crawling" layoutX="258.0" layoutY="209.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Start">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="30.0" layoutY="48.0" text="Seed" AnchorPane.leftAnchor="30.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_link_seed" layoutX="71.0" layoutY="49.0" prefHeight="25.0" prefWidth="494.0" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="35.0" />
+      <Label fx:id="lbl_title" alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="14.0" prefHeight="35.0" prefWidth="151.0" text="Web Crawler" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="224.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="239.0" text="Current Link" AnchorPane.leftAnchor="18.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_current_link" layoutX="18.0" layoutY="259.0" prefHeight="25.0" prefWidth="570.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="12.0" />
+      <TabPane layoutX="18.0" layoutY="295.0" prefHeight="320.0" prefWidth="571.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="295.0">
+        <tabs>
+          <Tab text="Links">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <TextArea fx:id="ta_links" prefHeight="259.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Body Text Features ">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <TextArea fx:id="ta_text_features" prefHeight="258.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab text="Anchor Text Features">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <TextArea fx:id="ta_anchor_features" prefHeight="259.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="URL path Features">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <TextArea fx:id="ta_url_features" prefHeight="260.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="396.0" layoutY="626.0" text="Number of Links Crawled" />
+      <Label fx:id="lbl_numLinks" layoutX="538.0" layoutY="626.0" prefHeight="17.0" prefWidth="47.0" />
+      <Button fx:id="btn_saveLinks" layoutX="275.0" layoutY="622.0" mnemonicParsing="false" text="Save Links" />
+      <Button fx:id="btn_showStatistics" layoutX="18.0" layoutY="622.0" mnemonicParsing="false" text="Statistics" />
+   </children>
+</AnchorPane>
